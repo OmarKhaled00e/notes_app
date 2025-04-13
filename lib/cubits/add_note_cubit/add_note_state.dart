@@ -9,9 +9,9 @@ final class AddNoteLoading extends AddNoteState {}
 
 final class AddNoteSuccess extends AddNoteState {}
 
-final class AddNoteFailute extends AddNoteState {
+final class AddNoteFailure extends AddNoteState {
   final String errMassage;
 
-  AddNoteFailute(this.errMassage);
+  AddNoteFailure(this.errMassage);
   
 }
