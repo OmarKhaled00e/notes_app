@@ -4,6 +4,7 @@ import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/widgets/add_note_form.dart';
 
+
 class AddNoteBottomSheet extends StatelessWidget {
   const AddNoteBottomSheet({super.key});
 
@@ -16,13 +17,13 @@ class AddNoteBottomSheet extends StatelessWidget {
           if (state is AddNoteSuccess) {
             BlocProvider.of<NotesCubit>(context).fatchAllNotes();
             Navigator.pop(context);
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('Note Added Successfully')),
-            );
+                ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      
+                      content: Text('Add Note Successfully')),
+                  );
           }
-          if (state is AddNoteFailure) {
-            
-          }
+          if (state is AddNoteFailure) {}
         },
         builder: (context, state) {
           return AbsorbPointer(

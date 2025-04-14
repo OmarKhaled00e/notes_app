@@ -5,6 +5,7 @@ import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/edit_note_view.dart';
 
+
 class NoteItem extends StatelessWidget {
   const NoteItem({super.key, required this.note});
   final NoteModel note;
@@ -16,9 +17,7 @@ class NoteItem extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return EditNoteView(
-                note: note,
-              );
+              return EditNoteView(note: note);
             },
           ),
         );
@@ -52,8 +51,8 @@ class NoteItem extends StatelessWidget {
                   note.delete();
                   BlocProvider.of<NotesCubit>(context).fatchAllNotes();
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Note deleted successfully')));
-                    
+                    SnackBar(content: Text('Note deleted Successfully')),
+                  );
                 },
                 icon: Icon(
                   FontAwesomeIcons.trash,
